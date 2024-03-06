@@ -1,0 +1,11 @@
+.InputContainer {
+  display: flex;
+}
+
+.InputContainer input {
+  margin-right: 10px;
+  aspect-ratio: 1;
+  width: 50px;
+  text-align: center;
+  font-size: larger;
+}
