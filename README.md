@@ -30,7 +30,7 @@ const App = () => {
             reference={pinify.ref} 
             onChange={pinify.valueChangeHandler} 
         />
-        <button onClick={}>Submit</button>
+        <button onClick={formSubmitHandler}>Submit</button>
         {/*JSX*/}
     </>
 }
