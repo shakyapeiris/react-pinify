@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "typescript-plugin-css-modules": "^5.1.0"
-  }
+  },
+  "keywords": ["react", "react-pin", "typescript", "component"]
 }
