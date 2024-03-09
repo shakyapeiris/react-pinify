@@ -37,13 +37,11 @@ export const usePinify = (length: number) => {
     }
 }
 
-export default function Pinify({reference, onChange}: {reference: useInputType<string>[], onChange: (v:any) => void}){
+export function Pinify({reference, onChange}: {reference: useInputType<string>[], onChange: (v:any) => void}){
   const valueChangeHandler = (value: string, index: number) => {
     reference[index].valueChangeHandler(value);
     if (value.length != 0) {
       if (index != reference.length - 1) {
-        console.log(index);
-        console.log(reference);
         reference[index + 1].focusHandler();
       }
     }
@@ -79,3 +77,5 @@ export default function Pinify({reference, onChange}: {reference: useInputType<s
   </div>
 </>
 }
+
+export const Underlined = classes.UnderLined
