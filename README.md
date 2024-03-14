@@ -9,7 +9,7 @@ npm i react-pinify
 ```
 
 ```jsx
-import {usePinify, Pinify} from 'react-pinify'
+import {usePinify, Pinify, Underlined} from 'react-pinify'
 
 const App = () => {
 
@@ -29,6 +29,7 @@ const App = () => {
         <Pinify 
             reference={pinify.ref} 
             onChange={pinify.valueChangeHandler} 
+            defaultStyles = {Underlined}
         />
         <button onClick={formSubmitHandler}>Submit</button>
         {/*JSX*/}

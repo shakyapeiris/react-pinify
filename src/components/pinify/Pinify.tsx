@@ -37,7 +37,23 @@ export const usePinify = (length: number) => {
     }
 }
 
-export function Pinify({reference, onChange}: {reference: useInputType<string>[], onChange: (v:any) => void}){
+export function Pinify({reference, onChange, defaultStyles, style}: {reference: useInputType<string>[], onChange: (v:any) => void, defaultStyles: string, style ?: {
+  borderWidth ?: string,
+  borderColor ?: string,
+  spacing ?: string,
+  fontSize ?: string,
+  padding ?: string,
+  fontColor ?: string,
+  error ?: {
+    borderColor ?: string
+    fontColor ?: string
+  }
+}}){
+
+  // if (){
+  //   console.error('Default parameter is also expected')
+  // }
+
   const valueChangeHandler = (value: string, index: number) => {
     reference[index].valueChangeHandler(value);
     if (value.length != 0) {
@@ -68,14 +84,18 @@ export function Pinify({reference, onChange}: {reference: useInputType<string>[]
           }}
           onBlur={item.blurHandler}
           style={{
-            outlineColor: item.isError ? "red" : "black",
-            borderBlockColor: item.isError ? "red" : "black",
+            borderWidth: style?.borderWidth,
+            borderColor: item.isError ? (style?.error?.borderColor || 'red') : style?.borderColor,
+            marginRight: style?.spacing,
+            padding: style?.padding,
+            fontSize: style?.fontSize,
+            color: item.isError ? (style?.error?.fontColor ||style?.error?.borderColor|| 'red') : style?.error?.borderColor 
           }}
+          className={defaultStyles}
         />
       );
     })}
   </div>
 </>
 }
-
 export const Underlined = classes.UnderLined
